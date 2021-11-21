@@ -2,7 +2,7 @@ import Foundation
 
 open class BaseNetworkService {
     public typealias Handler = (Data?, URLResponse?, Error?) -> Void
-    lazy var session = URLSession(configuration: configuration)
+    public lazy var session = URLSession(configuration: configuration)
     private let configuration = URLSessionConfiguration.default
     public let decoder = JSONDecoder()
     // MARK: - Constructor
