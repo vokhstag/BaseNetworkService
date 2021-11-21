@@ -1,12 +1,12 @@
 import Foundation
 
 public class BaseNetworkService {
-    typealias Handler = (Data?, URLResponse?, Error?) -> Void
+    public typealias Handler = (Data?, URLResponse?, Error?) -> Void
     lazy var session = URLSession(configuration: configuration)
     private let configuration = URLSessionConfiguration.default
     let decoder = JSONDecoder()
     // MARK: - Constructor
-    init() {
+    public init() {
     }
     public func httpResponse(data: Data?, response: URLResponse?) throws -> Data {
         guard let httpResponse = response as? HTTPURLResponse else {
