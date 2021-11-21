@@ -1,10 +1,10 @@
 import Foundation
 
-public class BaseNetworkService {
+open class BaseNetworkService {
     public typealias Handler = (Data?, URLResponse?, Error?) -> Void
     lazy var session = URLSession(configuration: configuration)
     private let configuration = URLSessionConfiguration.default
-    let decoder = JSONDecoder()
+    public let decoder = JSONDecoder()
     // MARK: - Constructor
     public init() {
     }
